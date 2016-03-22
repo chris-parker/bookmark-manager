@@ -1,8 +1,9 @@
 require 'sinatra/base'
+require './lib/link'
 
 class Bookmark < Sinatra::Base
   get '/' do
-    'Hello Bookmark!'
+    redirect '/links'
   end
 
   get '/links' do

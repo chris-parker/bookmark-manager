@@ -115,9 +115,9 @@ RSpec.configure do |config|
   end
 
   # Everything in this block runs once after each individual test
-  # config.after(:each) do
-  #   DatabaseCleaner.clean
-  # end
+  config.after(:each) do
+    DatabaseCleaner.clean
+  end
 
 end
 

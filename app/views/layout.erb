@@ -9,6 +9,9 @@
     <% if current_user %>
     <h2><%= current_user.username %></h2>
     <% end %>
+    <% if flash[:invalid] %>
+    <div id='invalid'><%= flash[:invalid] %></div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

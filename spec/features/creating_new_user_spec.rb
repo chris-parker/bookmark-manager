@@ -9,6 +9,7 @@ end
 feature 'new user incorrect password verification' do
   scenario 'does not create a new user' do
     expect { incorrect_sign_up }.not_to change(User, :count)
-    # expect { incorrect_sign_up }.to raise_error("Password does not match")
+    expect(current_path).to eq '/new_user'
+    expect(page).to have_content 'Passwords do not match'
   end
 end

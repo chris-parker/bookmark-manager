@@ -7,6 +7,7 @@ gem 'dm-core'
 gem 'dm-validations'
 gem 'sinatra'
 gem 'bcrypt'
+gem 'sinatra-flash'
 group :test do
   gem 'shotgun'
   gem 'capybara'

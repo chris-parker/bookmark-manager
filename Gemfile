@@ -4,6 +4,7 @@ gem 'database_cleaner'
 gem 'data_mapper'
 gem 'dm-postgres-adapter'
 gem 'sinatra'
+gem 'bcrypt'
 group :test do
   gem 'shotgun'
   gem 'capybara'

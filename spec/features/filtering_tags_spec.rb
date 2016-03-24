@@ -2,14 +2,14 @@
 
 feature 'Add link to BOOKMARKS' do
   scenario 'Click Add Link and submit' do
-    visit '/'
+    visit '/home'
     click_button("Add Link")
     fill_in('title', with: 'NME')
     fill_in('href', with: 'http://www.nme.com' )
     fill_in('tags', with: 'news')
     click_button("Save")
 
-    visit '/'
+    visit '/home'
     click_button("Add Link")
     fill_in('title', with: 'Melody Maker')
     fill_in('href', with: 'http://www.melody_maker.com' )

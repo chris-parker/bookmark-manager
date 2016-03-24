@@ -1,4 +1,3 @@
-
 class Link
   include DataMapper::Resource
 
@@ -7,6 +6,5 @@ class Link
   property :id, Serial
   property :title, Text, :lazy => false
   property :href, Text, :lazy => false
-
 
 end

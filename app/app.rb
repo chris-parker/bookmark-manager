@@ -15,6 +15,7 @@ class Bookmark < Sinatra::Base
 
   get '/home' do
     @links = Link.all
+    @title = "Home"
     erb(:home)
   end
 
@@ -24,6 +25,7 @@ class Bookmark < Sinatra::Base
 
   get '/tags/:name' do
     tag =  Tag.all(name: params[:name])
+    @title = params[:name]
     @links = tag.links
     erb(:home)
   end
@@ -36,6 +38,7 @@ class Bookmark < Sinatra::Base
 
   get '/new_user' do
     @user = User.new
+    @title = "Sign up"
     erb(:new_user)
   end
 
@@ -48,7 +51,7 @@ class Bookmark < Sinatra::Base
       session[:user_id] = @user.id
       redirect to('/home')
     else
-      flash.now[:invalid] = 'Passwords do not match'
+      flash.now[:invalid] = "Passwords do not match"
       erb(:new_user)
     end
   end

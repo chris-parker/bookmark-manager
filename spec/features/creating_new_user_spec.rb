@@ -5,3 +5,10 @@ feature 'new user' do
     expect(User.first.email).to eq "chris@gmail.com"
   end
 end
+
+feature 'new user incorrect password verification' do
+  scenario 'does not create a new user' do
+    expect { incorrect_sign_up }.not_to change(User, :count)
+    # expect { incorrect_sign_up }.to raise_error("Password does not match")
+  end
+end

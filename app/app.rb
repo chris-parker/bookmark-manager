@@ -37,12 +37,12 @@ class Bookmark < Sinatra::Base
   end
 
   post '/new_user' do
-    username = params[:username]
-    email = params[:email]
-    password = params[:password]
-    user = User.create(username: username, email: email, password: password)
-    session[:user_id] = user.id
-    redirect to('/home')
+    user = User.create(username: params[:username],
+                    email: params[:email],
+                    password: params[:password],
+                    password_confirmation: params[:password_confirmation])
+      session[:user_id] = user.id
+  redirect to('/home')
   end
 
   helpers do
